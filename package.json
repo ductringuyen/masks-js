@@ -4,8 +4,9 @@
   "description": "A NPM package that exports functions to mask values",
   "main": "build/index.js",
   "scripts": {
-    "build": "babel ./src -d ./lib",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run lint && babel ./src -d ./lib",
+    "lint": "eslint ./src",
+    "test": "mocha --require babel-core/register"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,15 @@
   },
   "homepage": "https://github.com/ductringuyen/masks-js#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^8.25.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "mocha": "^10.1.0",
+    "typescript": "^4.8.4"
   }
 }
